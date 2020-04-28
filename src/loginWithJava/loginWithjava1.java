@@ -10,7 +10,8 @@ import javax.swing.border.EmptyBorder;
 
 
 import java.sql.Statement;
-
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -38,6 +39,7 @@ public class loginWithjava1 extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JButton btnLogin;
+	
 
 	/**
 	 * Launch the application.
@@ -95,37 +97,28 @@ public class loginWithjava1 extends JFrame {
 		btnLogin = new JButton("\u30ED\u30B0\u30A4\u30F3");
 		btnLogin.setFont(new Font("HGP∫ﬁºØ∏M", Font.PLAIN, 10));
 		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				String id1 = textField.getText();
-				String pass1 = textField_1.getText();
-				
-				String iddb ;
-				String passdb ;
-				
-				Connection conn;
-				
-				
+			public  void actionPerformed(ActionEvent e) {
+				String inpId = textField.getText();
+				String inpPass = textField_1.getText();
+				Connection conn = null;
+		        PreparedStatement statement = null;
 				try {
 					conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/miniproject?serverTimezone=JST","root","voice008");
-					
-			
-					//@SuppressWarnings("rawtypes")
-					Statement myst = conn.createStatement();
-					
-					ResultSet myRS =myst.executeQuery("Select id, password from customer");
-					
-					boolean isUser =false;
-					
-					while(myRS.next()){
-						iddb = myRS.getString("id");
-						passdb = myRS.getString("password");
-					
-						if(id1.equals(iddb) && pass1.equals(passdb)) {
+					String sql ="Select * from customer where id = ? and password = ?";
+					statement = conn.prepareStatement(sql);
+					statement.setString(1,inpId);
+					statement.setString(2,inpPass);
+		            ResultSet rs = statement.executeQuery();
+		            boolean isUser =false;
+					while(rs.next()){
+						String iddb = rs.getString("id");
+						String passdb =rs.getString("password");
+						if(inpId.equals(iddb) && inpPass.equals(passdb)) {
 							isUser = true;
-							if(id1.equals("admin")) {
+							if(inpId.equals("9999")) {
 								Admin a = new Admin();
 								a.setVisible(true);
+								
 							}else {
 								serch v = new serch();
 								v.setVisible(true);
@@ -133,13 +126,14 @@ public class loginWithjava1 extends JFrame {
 						}
 					}
 					if (isUser == false) {
-						JOptionPane.showMessageDialog(btnLogin, "IdñîÇÕPasswordÇ™ä‘à·Ç¡ÇƒÇ¢Ç‹Ç∑ÅB");
-					}
+						JOptionPane.showMessageDialog(btnLogin, "IdñîÇÕPasswordÇ™ä‘à·Ç¡ÇƒÇ¢Ç‹Ç∑ÅB"); 
+					}	
 			}catch (SQLException ex) {
 					ex.printStackTrace();
 				}
 				
 			}
+			
 		});
 		btnLogin.setBounds(213, 204, 76, 21);
 		contentPane1.add(btnLogin);
