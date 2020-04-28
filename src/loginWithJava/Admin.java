@@ -51,23 +51,36 @@ public class Admin extends JFrame {
 		lblNewLabel.setBounds(12, 10, 125, 38);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("\u56F3\u66F8\u4E00\u89A7");
-		btnNewButton.setFont(new Font("HGP恨集窶", Font.PLAIN, 12));
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnbook = new JButton("\u56F3\u66F8\u4E00\u89A7");
+		btnbook.setFont(new Font("HGP恨集窶", Font.PLAIN, 12));
+		btnbook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(22, 80, 115, 21);
-		contentPane.add(btnNewButton);
+		btnbook.setBounds(22, 80, 115, 21);
+		contentPane.add(btnbook);
 		
-		JButton btnNewButton_1 = new JButton("\u30E6\u30FC\u30B6\u30FC\u4E00\u89A7");
-		btnNewButton_1.setFont(new Font("HGP恨集窶", Font.PLAIN, 12));
-		btnNewButton_1.setBounds(22, 129, 115, 21);
-		contentPane.add(btnNewButton_1);
+		JButton btnuser = new JButton("\u30E6\u30FC\u30B6\u30FC\u4E00\u89A7");
+		btnuser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnuser.setFont(new Font("HGP恨集窶", Font.PLAIN, 12));
+		btnuser.setBounds(22, 129, 115, 21);
+		contentPane.add(btnuser);
 		
-		JButton btnNewButton_2 = new JButton("\u30ED\u30B0\u30A2\u30A6\u30C8");
-		btnNewButton_2.setFont(new Font("HGS恨集窶", Font.PLAIN, 12));
-		btnNewButton_2.setBounds(22, 208, 115, 21);
-		contentPane.add(btnNewButton_2);
+		JButton btnlgout = new JButton("\u30ED\u30B0\u30A2\u30A6\u30C8");
+		btnlgout.addActionListener(new ActionListener() {
+			public void  actionPerformed(ActionEvent e) {
+				loginWithjava1 v = new loginWithjava1();
+				v.setVisible(true);
+				
+
+			}
+			
+		});
+		btnlgout.setFont(new Font("HGS恨集窶", Font.PLAIN, 12));
+		btnlgout.setBounds(22, 208, 115, 21);
+		contentPane.add(btnlgout);
 	}
 }
