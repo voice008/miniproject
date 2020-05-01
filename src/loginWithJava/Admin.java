@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import bookList.bookList1;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -55,6 +58,9 @@ public class Admin extends JFrame {
 		btnbook.setFont(new Font("HGPºÞ¼¯¸M", Font.PLAIN, 12));
 		btnbook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				bookList1 a = new bookList1();
+				a.setVisible(true);
 			}
 		});
 		btnbook.setBounds(22, 80, 115, 21);
