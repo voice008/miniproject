@@ -94,10 +94,11 @@ public class bookList1 extends JFrame {
 						
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306"
 								+ "/miniproject?serverTimezone=JST","root","voice008");
-				        String query ="Select * from book";
+				        String query ="Select * from book ";  
+				        		
 				        statement = conn.prepareStatement(query);
 				        ResultSet rs = statement.executeQuery();
-				        table.setModel(DbUtils.resultSetToTableModel(rs));
+				      table.setModel(DbUtils.resultSetToTableModel(rs)); 
 				        
 			} catch (Exception ex) {
 				ex.printStackTrace();
