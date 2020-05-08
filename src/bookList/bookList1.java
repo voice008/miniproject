@@ -94,10 +94,11 @@ public class bookList1 extends JFrame {
 						
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306"
 								+ "/miniproject?serverTimezone=JST","root","voice008");
-				        String query ="Select * from book";
+				        String query ="Select * from book ";  
+				        		
 				        statement = conn.prepareStatement(query);
 				        ResultSet rs = statement.executeQuery();
-				        table.setModel(DbUtils.resultSetToTableModel(rs));
+				      table.setModel(DbUtils.resultSetToTableModel(rs)); 
 				        
 			} catch (Exception ex) {
 				ex.printStackTrace();
@@ -123,6 +124,9 @@ public class bookList1 extends JFrame {
 		btnNewButton_1 = new JButton("\u65B0\u898F\u767B\u9332");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				register a = new register();
+				a.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(12, 64, 98, 21);
