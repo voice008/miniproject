@@ -124,6 +124,9 @@ public class bookList1 extends JFrame {
 		btnNewButton_1 = new JButton("\u65B0\u898F\u767B\u9332");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				register a = new register();
+				a.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(12, 64, 98, 21);
