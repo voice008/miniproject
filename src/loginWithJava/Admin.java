@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import bookList.bookList1;
+import bookList.bookList;
 
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -59,7 +59,7 @@ public class Admin extends JFrame {
 		btnbook.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				bookList1 a = new bookList1();
+				bookList a = new bookList();
 				a.setVisible(true);
 			}
 		});
@@ -78,7 +78,7 @@ public class Admin extends JFrame {
 		JButton btnlgout = new JButton("\u30ED\u30B0\u30A2\u30A6\u30C8");
 		btnlgout.addActionListener(new ActionListener() {
 			public void  actionPerformed(ActionEvent e) {
-				loginWithjava1 v = new loginWithjava1();
+				loginWithJave v = new loginWithJave();
 				v.setVisible(true);
 				
 
