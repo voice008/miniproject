@@ -2,36 +2,24 @@ package loginWithJava;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-
-
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JPasswordField;
-import javax.swing.JTextPane;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.awt.event.ActionEvent;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-
-public class loginWithjava1 extends JFrame {
+public class loginWithJave extends JFrame {
 
 	private JPanel contentPane1;
 	private JLabel lblUser;
@@ -48,7 +36,7 @@ public class loginWithjava1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					loginWithjava1 frame = new loginWithjava1();
+					loginWithJave frame = new loginWithJave();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -60,7 +48,7 @@ public class loginWithjava1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public loginWithjava1() {
+	public loginWithJave() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane1 = new JPanel();
@@ -118,7 +106,6 @@ public class loginWithjava1 extends JFrame {
 							if(inpId.equals("9999")) {
 								Admin a = new Admin();
 								a.setVisible(true);
-								
 							}else {
 								serch v = new serch();
 								v.setVisible(true);
